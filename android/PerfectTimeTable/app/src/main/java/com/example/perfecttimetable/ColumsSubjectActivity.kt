@@ -21,7 +21,7 @@ class ColumsSubjectActivity : AppCompatActivity() {
         //리사이클러 뷰설정
         //todo : linkRecycler(dataList)
 
-        //todo : 상세보기 클릭시 넘어가기 (리사이클러뷰의 리스너 사용하기)
+        //todo : 상세보기 클릭시 넘어가기 (리사이클러뷰 아이템)
 
         //추가하기 버튼 누르면
         adapter.setOnAddClickListener(object : SubjectCAdapter.OnAddClickListener {

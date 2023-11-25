@@ -6,4 +6,7 @@ object Constance {
     const val WEDNESDAY="wen"
     const val THURSDAY="thu"
     const val FRIDAY="fri"
+
+    var MAXTIME=0
+    var OPENDAY=""
 }
