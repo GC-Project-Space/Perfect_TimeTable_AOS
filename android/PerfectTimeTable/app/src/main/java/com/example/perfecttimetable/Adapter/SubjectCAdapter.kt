@@ -5,17 +5,17 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.perfecttimetable.Subject
+import com.example.perfecttimetable.SubjectList
 import com.example.perfecttimetable.databinding.ItemSubjectBinding
 
 class SubjectCAdapter(
     private val context: Context,
-    val dataList: MutableList<Subject>)
+    val dataList: MutableList<SubjectList>)
     : RecyclerView.Adapter<SubjectCAdapter.ViewHolder>(){
 
     // 추가 버튼 클릭 리스너 인터페이스 정의
     interface OnAddClickListener {
-        fun onAddClick(item: Subject)
+        fun onAddClick(item: SubjectList)
     }
 
     private var addClickListener: OnAddClickListener? = null
@@ -39,9 +39,9 @@ class SubjectCAdapter(
             }
         }
 
-        fun bind(item: Subject){
+        fun bind(item: SubjectList){
             binding.subjectNameTxt.text=item.title
-            binding.columTxt.text=item.colum
+            binding.columTxt.text=item.series
 
             //선탣된 과목은 파란색 글씨로 변경
             if(item.isChoice){
@@ -71,7 +71,7 @@ class SubjectCAdapter(
     }
 
     //데이터 업데이트 (모두 지우고 업데이트)
-    fun updateData(newDataList:List<Subject>){
+    fun updateData(newDataList:List<SubjectList>){
         dataList.clear()
         dataList.addAll(newDataList)
         notifyDataSetChanged()
