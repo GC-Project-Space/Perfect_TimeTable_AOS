@@ -3,6 +3,7 @@ package com.example.perfecttimetable
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.perfecttimetable.Adapter.SubjectCAdapter
 import com.example.perfecttimetable.databinding.ActivityColumsSubjectBinding
@@ -12,23 +13,30 @@ class CreateNewTimeTableActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateNewTimeTableBinding
     private lateinit var adapter: SubjectCAdapter
 
-    private lateinit var choiceList:MutableList<SubjectList> //선택한 과목 리스트
+    private var choiceList: MutableList<SubjectList> = mutableListOf() //선택한 과목 리스트
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityCreateNewTimeTableBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //리사이클러 뷰설정
-        //todo : linkRecycler(dataList)
+        val dataList = listOf(
+            SubjectList("세계와언어", 0, false),
+            SubjectList("인간과예술", 0, false),
+            SubjectList("사회와역사",0,false),
+            SubjectList("기초교양", 0, false),
+            SubjectList("일반교양", 0, false)
+        )
 
-        //todo : 상세보기 클릭시 넘어가기 (리사이클러뷰 아이템)
+        //리사이클러 뷰설정
+        linkRecyclr(dataList)
 
         //추가하기 버튼 누르면
-        /*adapter.setOnAddClickListener(object : SubjectCAdapter.OnAddClickListener {
+        adapter.setOnAddClickListener(object : SubjectCAdapter.OnAddClickListener {
             override fun onAddClick(item: SubjectList) {
                 // 아이템의 추가 버튼 클릭 시 동작
                 // choiceList에 아이템 추가
+                Log.d("onAddClick", "onAddClick 엑티비티")
                 choiceList.add(item)
 
                 // 어댑터의 데이터(dataList)에서도 해당 아이템을 찾아 상태 변경
@@ -36,9 +44,10 @@ class CreateNewTimeTableActivity : AppCompatActivity() {
                 if (position != -1) {
                     adapter.dataList[position].isChoice = true
                     adapter.notifyItemChanged(position) // 해당 아이템만 업데이트
+                    Log.d("추가하기", "아마 추가가 됨")
                 }
             }
-        })*/
+        })
 
         //todo : 시간표 만들기 버튼 누르기
         binding.createNewBtn.setOnClickListener {
@@ -55,6 +64,16 @@ class CreateNewTimeTableActivity : AppCompatActivity() {
             finish()
         }
 
+        //메뉴로 이동
+        binding.menuBtn.setOnClickListener {
+            val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent) //피니쉬는 하지마
+        }
+
+
+        binding.icBackBtn.setOnClickListener {
+            finish()
+        }
 
     }
 

@@ -21,6 +21,12 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
         //sharedPreferences
         sharedPreferences = getSharedPreferences("setting", MODE_PRIVATE)
 
+        setView()
+
+        binding.closeBtn.setOnClickListener {
+            finish()
+        }
+
         //클릭 리스너 등록
         binding.monTxt.setOnClickListener(this)
         binding.tusTxt.setOnClickListener(this)
@@ -46,66 +52,79 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
             binding.monTxt.id -> {
                 allDayColorBlack()
                 editor.putString("selected_day", Constance.MONDAY)
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.tusTxt.id ->{
                 allDayColorBlack()
                 editor.putString("selected_day", Constance.TUESDAY)
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.wenTxt.id -> {
                 allDayColorBlack()
                 editor.putString("selected_day", Constance.WEDNESDAY)
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.thuTxt.id -> {
                 allDayColorBlack()
                 editor.putString("selected_day", Constance.THURSDAY)
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.friTxt.id -> {
                 allDayColorBlack()
                 editor.putString("selected_day", Constance.FRIDAY)
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.time1Txt.id -> {
-                allDayColorBlack()
+                allTimeColorBlack()
                 editor.putString("selected_time", "1")
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.time2Txt.id -> {
-                allDayColorBlack()
+                allTimeColorBlack()
                 editor.putString("selected_time", "2")
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.time3Txt.id -> {
-                allDayColorBlack()
+                allTimeColorBlack()
                 editor.putString("selected_time", "3")
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.time4Txt.id -> {
-                allDayColorBlack()
+                allTimeColorBlack()
                 editor.putString("selected_time", "4")
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.grade1Txt.id -> {
-                allDayColorBlack()
+                allGradeColorBlack()
                 editor.putString("selected_grade", "1")
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.grade2Txt.id -> {
-                allDayColorBlack()
+                allGradeColorBlack()
                 editor.putString("selected_grade", "2")
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.grade3Txt.id -> {
-                allDayColorBlack()
+                allGradeColorBlack()
                 editor.putString("selected_grade", "3")
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.grade4Txt.id -> {
-                allDayColorBlack()
+                allGradeColorBlack()
                 editor.putString("selected_grade", "4")
+                editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
 
@@ -134,5 +153,30 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
         binding.grade3Txt.setTextColor(Color.parseColor("#000000"))
         binding.grade4Txt.setTextColor(Color.parseColor("#000000"))
 
+    }
+
+    //SharedPreferences 정보 꺼내서 설정
+    private fun setView(){
+        val day=sharedPreferences.getString("selected_day", "")
+        val time=sharedPreferences.getString("selected_time", "")
+        val grade=sharedPreferences.getString("selected_grade", "")
+
+        if(!day.isNullOrBlank()){
+            val dayId = resources.getIdentifier("${day}_txt", "id", packageName)
+            val textView = findViewById<TextView>(dayId)
+            textView?.setTextColor(Color.parseColor("#0046AA")) //글자색
+        }
+
+        if(!time.isNullOrBlank()){
+            val timeId = resources.getIdentifier("time${time}_txt", "id", packageName)
+            val textView2 = findViewById<TextView>(timeId)
+            textView2?.setTextColor(Color.parseColor("#0046AA")) //글자색
+        }
+
+        if(!grade.isNullOrBlank()){
+            val gradeId = resources.getIdentifier("grade${grade}_txt", "id", packageName)
+            val textView3 = findViewById<TextView>(gradeId)
+            textView3?.setTextColor(Color.parseColor("#0046AA")) //글자색
+        }
     }
 }
