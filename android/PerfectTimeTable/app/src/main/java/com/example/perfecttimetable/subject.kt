@@ -5,17 +5,15 @@ import kotlinx.parcelize.Parcelize
 
 //과목명
 @Parcelize
-data class SubjectList(
+data class SubjectList( //교양 계열
     val title: String,
-    val series: String, //전공, 융합교양, 기초교양 ( int )
-    val list: List<String>, //학수번호 리스트
-    var isChoice:Boolean
+    var wantCredit:Int, //듣고 싶은 학점
+    var isChoice:Boolean //무시
 ) : Parcelable
 
 @Parcelize
 data class Subject( //과목 상세 디테일
     val title: String,
-    val subNum:String,
     val startTime:Int, //12:00 같은 시간이 아니라, 1교시 같은 교시 기준 (1교시 단위)
     val endTime:Int,
     val day:String //요일
