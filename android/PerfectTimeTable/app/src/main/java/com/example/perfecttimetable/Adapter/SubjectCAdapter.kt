@@ -2,6 +2,7 @@ package com.example.perfecttimetable.Adapter
 
 import android.content.Context
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,26 +30,26 @@ class SubjectCAdapter(
         private val binding: ItemSubjectBinding
     ): RecyclerView.ViewHolder(binding.root){
 
-        init {
+
             // 추가 버튼 클릭 시 이벤트 설정
-            binding.addTxt.setOnClickListener {
-                val position = adapterPosition
-                if (position != RecyclerView.NO_POSITION) {
-                    addClickListener?.onAddClick(dataList[position]) // 추가 버튼 클릭 시 아이템 정보 전달
-                }
-            }
-        }
 
         fun bind(item: SubjectList){
             binding.subjectNameTxt.text=item.title
-            binding.columTxt.text=item.series
+            binding.creditEtxt.setText(item.wantCredit.toString())
 
             //선탣된 과목은 파란색 글씨로 변경
             if(item.isChoice){
                 binding.subjectNameTxt.setTextColor(Color.parseColor("#0046AA"))
             }
 
-            binding.addTxt.setOnClickListener {  }
+            binding.addTxt.setOnClickListener {
+                Log.d("추가 버튼", "추가 버튼 누름")
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    dataList[position].wantCredit=binding.creditEtxt.text.toString().toIntOrNull() ?: 0
+                    addClickListener?.onAddClick(dataList[position]) // 추가 버튼 클릭 시 아이템 정보 전달
+                }
+            }
 
         }
     }
