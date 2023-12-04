@@ -168,7 +168,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_1"
+                android:id="@+id/tue_1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -179,7 +179,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_1"
+                android:id="@+id/wed_1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -244,7 +244,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_2"
+                android:id="@+id/tue_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -255,7 +255,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_2"
+                android:id="@+id/wed_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -322,7 +322,7 @@
                 android:textSize="10dp" />
 
             <TextView
-                android:id="@+id/tus_3"
+                android:id="@+id/tue_3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -333,7 +333,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_3"
+                android:id="@+id/wed_3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -398,7 +398,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_4"
+                android:id="@+id/tue_4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -409,7 +409,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_4"
+                android:id="@+id/wed_4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -474,7 +474,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_5"
+                android:id="@+id/tue_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -485,7 +485,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_5"
+                android:id="@+id/wed_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -550,7 +550,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_6"
+                android:id="@+id/tue_6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -561,7 +561,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_6"
+                android:id="@+id/wed_6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -625,7 +625,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_7"
+                android:id="@+id/tue_7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -635,7 +635,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_7"
+                android:id="@+id/wed_7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -696,7 +696,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_8"
+                android:id="@+id/tue_8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -706,7 +706,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_8"
+                android:id="@+id/wed_8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -767,7 +767,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_9"
+                android:id="@+id/tue_9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -777,7 +777,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_9"
+                android:id="@+id/wed_9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -837,7 +837,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/tus_10"
+                android:id="@+id/tue_10"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -847,7 +847,7 @@
                 android:gravity="center"
                 android:layout_weight="1.5"/>
             <TextView
-                android:id="@+id/wen_10"
+                android:id="@+id/wed_10"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"

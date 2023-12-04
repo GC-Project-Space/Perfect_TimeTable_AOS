@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 // 받은 데이터 사용 예시
         receivedSubList?.let { subList ->
             // subList를 사용하여 작업 수행
+            setContent(subList)
         }
 
         receivedTitle?.let { title ->
@@ -58,9 +59,10 @@ class MainActivity : AppCompatActivity() {
         //시간표 설정
         for (item in subList){
             for( time in item.startTime..item.endTime){
+                if(time==item.endTime){continue}
                 val resourceId = resources.getIdentifier("${item.day}_${time}", "id", packageName)
                 val textView = findViewById<TextView>(resourceId)
-                textView?.text = item.title // 제목 설정
+                textView?.text = item.name // 제목 설정
                 textView?.setTextColor(Color.parseColor("#000000")) //글자색
                 textView?.setBackgroundColor(Color.parseColor("#FFE2EFFF")) //배경색
             }

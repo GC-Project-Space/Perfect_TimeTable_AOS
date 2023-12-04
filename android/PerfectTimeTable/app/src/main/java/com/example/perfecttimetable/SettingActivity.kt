@@ -81,49 +81,49 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
             }
             binding.time1Txt.id -> {
                 allTimeColorBlack()
-                editor.putString("selected_time", "1")
+                editor.putInt("selected_time", 1)
                 editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.time2Txt.id -> {
                 allTimeColorBlack()
-                editor.putString("selected_time", "2")
+                editor.putInt("selected_time", 2)
                 editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.time3Txt.id -> {
                 allTimeColorBlack()
-                editor.putString("selected_time", "3")
+                editor.putInt("selected_time", 3)
                 editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.time4Txt.id -> {
                 allTimeColorBlack()
-                editor.putString("selected_time", "4")
+                editor.putInt("selected_time", 4)
                 editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.grade1Txt.id -> {
                 allGradeColorBlack()
-                editor.putString("selected_grade", "1")
+                editor.putInt("selected_grade", 1)
                 editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.grade2Txt.id -> {
                 allGradeColorBlack()
-                editor.putString("selected_grade", "2")
+                editor.putInt("selected_grade", 2)
                 editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.grade3Txt.id -> {
                 allGradeColorBlack()
-                editor.putString("selected_grade", "3")
+                editor.putInt("selected_grade", 3)
                 editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }
             binding.grade4Txt.id -> {
                 allGradeColorBlack()
-                editor.putString("selected_grade", "4")
+                editor.putInt("selected_grade", 4)
                 editor.commit()
                 (v as TextView).setTextColor(Color.parseColor("#0046AA"))
             }

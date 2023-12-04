@@ -12,11 +12,14 @@ data class SubjectList( //교양 계열
 ) : Parcelable
 
 @Parcelize
-data class Subject( //과목 상세 디테일
-    val title: String,
-    val startTime:Int, //12:00 같은 시간이 아니라, 1교시 같은 교시 기준 (1교시 단위)
-    val endTime:Int,
-    val day:String //요일
+data class Subject(
+    val name: String,
+    val courseCode:String,
+    val startTime: Int,
+    val day: String,
+    val endTime: Int,
+    val credit: String,
+    val series: String
 ) : Parcelable
 
 //in : SubjectList)

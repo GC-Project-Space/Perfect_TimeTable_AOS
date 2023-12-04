@@ -1,11 +1,14 @@
 package com.example.perfecttimetable
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.perfecttimetable.Adapter.SubjectCAdapter
+import com.example.perfecttimetable.Algo.Chosen
+import com.example.perfecttimetable.Algo.Execute
 import com.example.perfecttimetable.databinding.ActivityColumsSubjectBinding
 import com.example.perfecttimetable.databinding.ActivityCreateNewTimeTableBinding
 
@@ -49,13 +52,28 @@ class CreateNewTimeTableActivity : AppCompatActivity() {
             }
         })
 
+        choiceList.add(SubjectList("전공",2, true))
+
         //todo : 시간표 만들기 버튼 누르기
         binding.createNewBtn.setOnClickListener {
+
+            var sharedPreferences: SharedPreferences = getSharedPreferences("setting", MODE_PRIVATE)
+
+            Chosen.day = sharedPreferences.getString("selected_day", "").toString()
+            Chosen.gap = sharedPreferences.getInt("selected_time", 2)+1
+            Chosen.grade =sharedPreferences.getInt("selected_grade", 2)
+
             //todo:시간표 짜기 알고리즘
+            val execute = Execute(this)
+            val subList= execute.main(choiceList)
+            SubList.list=subList.toMutableList()
+
+            // 로그 추가 - subList 내용 확인
+            Log.d("SubList 정보 :", "SubList: $subList")
 
             val intent= Intent(this, MainActivity::class.java)
             val bundle = Bundle()
-           // bundle.putParcelableArrayList("subList", ArrayList(subList))
+            bundle.putParcelableArrayList("subList", ArrayList(subList))
             bundle.putString("title", binding.titleEtxt.text.toString())
 
             intent.putExtra("bundle", bundle)
