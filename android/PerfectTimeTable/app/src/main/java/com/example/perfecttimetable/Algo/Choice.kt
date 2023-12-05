@@ -51,7 +51,7 @@ class Choice(con:Context) {
     }
 
     fun choseMajor(grade: Int) {
-        val db = DataBase(context).getMajor(Chosen.grade)
+        val db = DataBase(context).getMajor()
 
         for (i in db) {
             when (i.day) {
