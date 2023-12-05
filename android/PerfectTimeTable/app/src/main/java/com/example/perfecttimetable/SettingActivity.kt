@@ -158,8 +158,8 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
     //SharedPreferences 정보 꺼내서 설정
     private fun setView(){
         val day=sharedPreferences.getString("selected_day", "")
-        val time=sharedPreferences.getString("selected_time", "")
-        val grade=sharedPreferences.getString("selected_grade", "")
+        val time=sharedPreferences.getInt("selected_time", 2).toString()
+        val grade=sharedPreferences.getInt("selected_grade", 2).toString()
 
         if(!day.isNullOrBlank()){
             val dayId = resources.getIdentifier("${day}_txt", "id", packageName)
