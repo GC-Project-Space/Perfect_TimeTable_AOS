@@ -9,9 +9,15 @@ class Choice(con:Context) {
     val context=con
 
     init {
-        repeat(5) {
-            Chosen.chosens.add(mutableListOf())
-        }
+
+            Chosen.chosens=mutableListOf<MutableList<Subject>>(
+                mutableListOf(),
+                mutableListOf(),
+                mutableListOf(),
+                mutableListOf(),
+                mutableListOf()
+            )
+
     }
 
 
@@ -45,7 +51,7 @@ class Choice(con:Context) {
     }
 
     fun choseMajor(grade: Int) {
-        val db = DataBase(context).getMajor()
+        val db = DataBase(context).getMajor(Chosen.grade)
 
         for (i in db) {
             when (i.day) {
@@ -94,8 +100,20 @@ class Choice(con:Context) {
             val mid = (low + high) / 2
             when {
                 array[day][mid].startTime == newSubject.startTime -> return -1
-                array[day][mid].endTime == newSubject.startTime -> return 1
-                array[day][mid].startTime == newSubject.endTime -> return 1
+                array[day][mid].endTime == newSubject.startTime -> return 0
+                array[day][mid].endTime+1 == newSubject.startTime -> return 1
+                array[day][mid].endTime+2 == newSubject.startTime -> return 2
+                array[day][mid].endTime+3 == newSubject.startTime -> return 3
+                array[day][mid].endTime+4 == newSubject.startTime -> return 4
+
+
+
+                array[day][mid].startTime == newSubject.endTime -> return 0
+                array[day][mid].startTime == newSubject.endTime+1 -> return 1
+                array[day][mid].startTime == newSubject.endTime+2 -> return 2
+                array[day][mid].startTime == newSubject.endTime+3 -> return 3
+                array[day][mid].startTime == newSubject.endTime+4 -> return 4
+
                 array[day][mid].startTime < newSubject.startTime -> low = mid + 1
                 else -> high = mid - 1
             }
@@ -147,7 +165,7 @@ class Choice(con:Context) {
             }
         }
 
-        if (mingap <= 0) { // mingap이 특정 값 이하일 때 재귀 호출 멈추기
+        if (mingap < 0) { // mingap이 특정 값 이하일 때 재귀 호출 멈추기
             return
         }
 
