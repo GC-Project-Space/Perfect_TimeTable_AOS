@@ -63,6 +63,9 @@ class CreateNewTimeTableActivity : AppCompatActivity() {
             Chosen.gap = sharedPreferences.getInt("selected_time", 2)+1
             Chosen.grade =sharedPreferences.getInt("selected_grade", 2)
 
+            Log.d("갭", Chosen.gap.toString())
+            Log.d("학년", Chosen.grade.toString())
+
             //todo:시간표 짜기 알고리즘
             val execute = Execute(this)
             val subList= execute.main(choiceList)
