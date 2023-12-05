@@ -1,4 +1,4 @@
-# Perfect Table
+# Perfect TimeTable AOS
 > 알고리즘 13조 텀프로젝트
 
 **목차**
